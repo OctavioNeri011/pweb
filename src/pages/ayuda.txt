@@ -1,0 +1,67 @@
+--------crear proyecto astro
+npm create astro@latest
+-Where should we create your new project?
+pwebmem
+-How would you like to start your new project?
+empty
+-Install dependencies?
+yes
+-Do you plan to write TypeScript?
+yes
+-How strict should TypeScript be?
+strict
+-Initialize a new git repository?
+yes
+
+----INSTALAR TAILWIND
+npx astro add tailwind
+
+-Continue?
+yes
+-Astro will generate a minimal ./tailwind.config.mjs file.
+ Continue?
+yes
+-Astro will make the following changes to your config file:
+
+ ╭ astro.config.mjs ─────────────────────────────╮
+ │ import { defineConfig } from 'astro/config';  │
+ │                                               │
+ │ import tailwind from "@astrojs/tailwind";     │
+ │                                               │
+ │ // https://astro.build/config                 │
+ │ export default defineConfig({                 │
+ │   integrations: [tailwind()]                  │
+ │ });                                           │
+ ╰───────────────────────────────────────────────╯
+Continue?
+yes
+
+--------
+
+Crea la carpeta componentes dentro de src y agrega dos archivos (Header.astro y Footer.astro)
+Crea la carpeta layouts y agrega un archivo layout.astro
+
+----En el archivo layout
+Agregar los import y el código:
+
+import Header from '../componentes/header.astro'
+import Footer from '../componentes/footer.astro'
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="global" class="min-h-screen">
+        <Header/>
+        <slot name="article"/>
+        <Footer/>
+
+    </div>
+</body>
+</html>
+
