@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
 ---
 
 <Layout>
@@ -35,25 +36,29 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </div>
-
-  <script>
-    let currentSlide = 0;
-    const slideContainer = document.getElementById('slide-container');
-    const slides = document.querySelectorAll('#carousel .flex-shrink-0');
-    const slideWidth = slides[0].clientWidth;
-
-    function showSlide(index) {
-      slideContainer.style.transform = `translateX(-${index * slideWidth}px)`;
-      currentSlide = index;
-    }
-
-    setInterval(() => {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }, 5000);
-  </script>
 </Layout>
 
+<script lang="">
+  let currentSlide = 0;
+  const totalSlides = 3; // Cambia esto al número total de imágenes en tu carrusel
+
+  function showSlide(index) {
+    const container = document.getElementById('slide-container');
+    const slideWidth = document.querySelector('.flex-shrink-0').offsetWidth;
+
+    currentSlide = index;
+    container.style.transform = `translateX(${-index * slideWidth}px)`;
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    showSlide(currentSlide);
+  }
+
+  setInterval(() => {
+    nextSlide();
+  }, 5000); // Cambia 5000 a la cantidad de milisegundos que deseas entre cada cambio automático
+</script>
 
 
 

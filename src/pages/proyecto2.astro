@@ -24,7 +24,7 @@ import Layout from '../layouts/Layout.astro'
 	</div>
 </Layout>
 
-<script>
+<script lang="">
 	let errores = 0;
 	let guio = "";
 	let aciertos = 0;
@@ -118,7 +118,7 @@ import Layout from '../layouts/Layout.astro'
 	function ganarAhorcado(){
 		document.getElementById("palabra").innerHTML = "Felicidades, tu palabra era:"
 		document.getElementById("guiones").innerHTML = palabraArr.toString();
-		document.getElementById("imgA").src = "/IMGAHO/win1.gif";
+		document.getElementById("imgA").src = "/public/IMGAHO/win1.gif";
 		document.getElementById("txtLetra").disabled = true;
 		document.getElementById("btnLetra").style.display = "none";
 		document.getElementById("btnRes").style.display = "inline-block";
@@ -134,9 +134,6 @@ import Layout from '../layouts/Layout.astro'
 		}
 	}
 </script>
-
-
-		
 
 
 
