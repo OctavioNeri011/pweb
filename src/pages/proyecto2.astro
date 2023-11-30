@@ -24,7 +24,7 @@ import Layout from '../layouts/Layout.astro'
 	</div>
 </Layout>
 
-<script>
+<script lang="js">
 	let errores = 0;
 	let guio = "";
 	let aciertos = 0;
@@ -122,12 +122,12 @@ import Layout from '../layouts/Layout.astro'
 		document.getElementById("txtLetra").disabled = true;
 		document.getElementById("btnLetra").style.display = "none";
 		document.getElementById("btnRes").style.display = "inline-block";
-	}
+  }
 
 	document.getElementById("btnLetra").addEventListener("click", probar);
 	document.getElementById("btnRes").addEventListener("click", reinicio);
 	document.getElementById("txtLetra").addEventListener("keypress", tecla);
-
+  
 	function tecla(event) {
 		if (event.which === 13) {
 			probar();

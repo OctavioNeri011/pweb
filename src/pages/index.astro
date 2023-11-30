@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
 ---
 
 <Layout>
@@ -37,23 +36,25 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </div>
 
-  <script>
+  <script lang="js">
     let currentSlide = 0;
+    const slideContainer = document.getElementById('slide-container');
+    const slides = document.querySelectorAll('#carousel .flex-shrink-0');
+    const slideWidth = slides[0].clientWidth;
 
     function showSlide(index) {
-      const slideContainer = document.getElementById('slide-container');
-      const slideWidth = document.querySelector('#carousel .flex-shrink-0').clientWidth;
       slideContainer.style.transform = `translateX(-${index * slideWidth}px)`;
       currentSlide = index;
     }
 
-    //avanzar cada 5 segundos
+    // Avanzar cada 5 segundos
     setInterval(() => {
-      currentSlide = (currentSlide + 1) % 3;
+      currentSlide = (currentSlide + 1) % slides.length;
       showSlide(currentSlide);
     }, 5000);
   </script>
 </Layout>
+
 
 
 
