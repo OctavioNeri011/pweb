@@ -36,7 +36,7 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </div>
 
-  <script lang="js">
+  <script>
     let currentSlide = 0;
     const slideContainer = document.getElementById('slide-container');
     const slides = document.querySelectorAll('#carousel .flex-shrink-0');
@@ -47,7 +47,6 @@ import Layout from '../layouts/Layout.astro';
       currentSlide = index;
     }
 
-    // Avanzar cada 5 segundos
     setInterval(() => {
       currentSlide = (currentSlide + 1) % slides.length;
       showSlide(currentSlide);
